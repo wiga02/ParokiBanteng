@@ -5,6 +5,9 @@
  */
 package Banteng;
 
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -13,12 +16,17 @@ import javax.swing.UIManager;
  * @author Thomas Wiga
  */
 public class MainFrame extends javax.swing.JFrame {
-
+private Connection conn=DbHelper.getConnection();
     /**
      * Creates new form MainFrame
      */
     public MainFrame() {
         initComponents();
+//        try {
+//            getClass().getClassLoader().loadClass("Banteng.DbHelper");
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     /**
@@ -30,7 +38,9 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopupMenu1 = new javax.swing.JPopupMenu();
+        ctxTblWilayah = new javax.swing.JPopupMenu();
+        mnuTblWilTambah = new javax.swing.JMenuItem();
+        mnuTblWilUbah = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Home = new javax.swing.JPanel();
         Daftar_wilayah = new javax.swing.JPanel();
@@ -63,6 +73,17 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+
+        mnuTblWilTambah.setText("Tambah");
+        mnuTblWilTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuTblWilTambahActionPerformed(evt);
+            }
+        });
+        ctxTblWilayah.add(mnuTblWilTambah);
+
+        mnuTblWilUbah.setText("Ubah");
+        ctxTblWilayah.add(mnuTblWilUbah);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Penjadwalan Koor Paroki Keluarga Kudus Banteng");
@@ -116,6 +137,14 @@ public class MainFrame extends javax.swing.JFrame {
                 "Kode Wilayah", "Nama Wilayah", "Lokasi Wilayah", "Penanggung Jawab"
             }
         ));
+        tabel_Wilayah.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tabel_WilayahMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tabel_WilayahMouseReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(tabel_Wilayah);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -235,21 +264,38 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PJ_wilayahActionPerformed
 
+    private void mnuTblWilTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuTblWilTambahActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuTblWilTambahActionPerformed
+
+    private void tabel_WilayahMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabel_WilayahMouseReleased
+        // TODO add your handling code here:
+        if (evt.isPopupTrigger()) {
+            ctxTblWilayah.show(tabel_Wilayah, evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_tabel_WilayahMouseReleased
+
+    private void tabel_WilayahMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabel_WilayahMousePressed
+        // TODO add your handling code here:
+        if (evt.isPopupTrigger()) {
+            ctxTblWilayah.show(tabel_Wilayah, evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_tabel_WilayahMousePressed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-      try {
+
+        try {
 //        UIManager.setLookAndFeel("com.jtattoo.plaf.alumunium.AlumuniumLookAndFeel");
-        UIManager.setLookAndFeel("com.jtattoo.plaf.graphite.GraphiteLookAndFeel");
+            UIManager.setLookAndFeel("com.jtattoo.plaf.graphite.GraphiteLookAndFeel");
 //        UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
-        SwingUtilities.updateComponentTreeUI(new MainFrame());
-    } catch (Exception e){
- 
-    }
-    new MainFrame().setVisible(true);
+            SwingUtilities.updateComponentTreeUI(new MainFrame());
+        } catch (Exception e) {
+
+        }
+        new MainFrame().setVisible(true);
 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -292,6 +338,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_hapus;
     private javax.swing.JButton button_simpanEdit;
     private javax.swing.JButton button_tambahEdit;
+    private javax.swing.JPopupMenu ctxTblWilayah;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -305,7 +352,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -314,6 +360,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField kode_wilayah;
+    private javax.swing.JMenuItem mnuTblWilTambah;
+    private javax.swing.JMenuItem mnuTblWilUbah;
     private javax.swing.JTable tabel_Lingkungan;
     private javax.swing.JTable tabel_Wilayah;
     // End of variables declaration//GEN-END:variables
