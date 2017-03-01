@@ -37,28 +37,29 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        Nama_wilayah = new javax.swing.JTextField();
-        PJ_wilayah = new javax.swing.JTextField();
-        Lokasi_wilayah = new javax.swing.JTextField();
+        text_Nama_wilayah = new javax.swing.JTextField();
+        text_PJ_wilayah = new javax.swing.JTextField();
+        text_Lokasi_wilayah = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabel_Wilayah = new javax.swing.JTable();
-        kode_wilayah = new javax.swing.JTextField();
+        text_kode_wilayah = new javax.swing.JTextField();
         button_tambahEdit = new javax.swing.JButton();
         Daftar_lingkungan = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabel_Lingkungan = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        text_IDLingkungan = new javax.swing.JTextField();
+        text_NamaLingkungan = new javax.swing.JTextField();
+        text_PJLingkungan = new javax.swing.JTextField();
         button_simpanEdit = new javax.swing.JButton();
         button_hapus = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        text_noHP = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabel_Lingkungan = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -66,9 +67,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Penjadwalan Koor Paroki Keluarga Kudus Banteng");
+        setBackground(new java.awt.Color(0, 0, 0));
 
         jTabbedPane1.setToolTipText("");
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTabbedPane1.setFont(new java.awt.Font("Ubuntu", 3, 11)); // NOI18N
 
         javax.swing.GroupLayout HomeLayout = new javax.swing.GroupLayout(Home);
         Home.setLayout(HomeLayout);
@@ -78,32 +81,35 @@ public class MainFrame extends javax.swing.JFrame {
         );
         HomeLayout.setVerticalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 336, Short.MAX_VALUE)
+            .addGap(0, 392, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Home", Home);
 
-        Daftar_wilayah.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
+        jLabel5.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
         jLabel5.setText("Nama Wilayah");
-        Daftar_wilayah.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 27, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
         jLabel6.setText("Lokasi Wilayah");
-        Daftar_wilayah.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
         jLabel7.setText("Penanggung Jawab");
-        Daftar_wilayah.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 94, -1, 20));
-        Daftar_wilayah.add(Nama_wilayah, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 162, -1));
 
-        PJ_wilayah.addActionListener(new java.awt.event.ActionListener() {
+        text_Nama_wilayah.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
+
+        text_PJ_wilayah.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
+        text_PJ_wilayah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PJ_wilayahActionPerformed(evt);
+                text_PJ_wilayahActionPerformed(evt);
             }
         });
-        Daftar_wilayah.add(PJ_wilayah, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 162, -1));
-        Daftar_wilayah.add(Lokasi_wilayah, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 160, -1));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Daftar Wilayah"));
+        text_Lokasi_wilayah.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Daftar Wilayah", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Ubuntu", 3, 11))); // NOI18N
+        jPanel1.setFont(new java.awt.Font("Ubuntu", 3, 11)); // NOI18N
+
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         tabel_Wilayah.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,16 +134,110 @@ public class MainFrame extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        Daftar_wilayah.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 470, 170));
-        Daftar_wilayah.add(kode_wilayah, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 70, -1));
+        text_kode_wilayah.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
 
+        button_tambahEdit.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
         button_tambahEdit.setText("Tambah");
-        Daftar_wilayah.add(button_tambahEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, -1, -1));
+
+        javax.swing.GroupLayout Daftar_wilayahLayout = new javax.swing.GroupLayout(Daftar_wilayah);
+        Daftar_wilayah.setLayout(Daftar_wilayahLayout);
+        Daftar_wilayahLayout.setHorizontalGroup(
+            Daftar_wilayahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Daftar_wilayahLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addGap(54, 54, 54)
+                .addComponent(text_Nama_wilayah, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(text_kode_wilayah, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(Daftar_wilayahLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel6)
+                .addGap(50, 50, 50)
+                .addComponent(text_Lokasi_wilayah, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(Daftar_wilayahLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel7)
+                .addGap(26, 26, 26)
+                .addComponent(text_PJ_wilayah, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(button_tambahEdit))
+            .addGroup(Daftar_wilayahLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        Daftar_wilayahLayout.setVerticalGroup(
+            Daftar_wilayahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Daftar_wilayahLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(Daftar_wilayahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addGroup(Daftar_wilayahLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(Daftar_wilayahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(text_Nama_wilayah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(text_kode_wilayah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(10, 10, 10)
+                .addGroup(Daftar_wilayahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(text_Lokasi_wilayah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(Daftar_wilayahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Daftar_wilayahLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(text_PJ_wilayah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_tambahEdit))
+                .addGap(36, 36, 36)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jTabbedPane1.addTab("Daftar Wilayah", Daftar_wilayah);
+
+        Daftar_lingkungan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
+        jLabel1.setText("ID Lingkungan");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 20));
+
+        jLabel2.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
+        jLabel2.setText("Nama Lingkungan");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, 10));
+
+        jLabel3.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
+        jLabel3.setText("Penanggung Jawab");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 10));
+        jPanel3.add(text_IDLingkungan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 99, 20));
+        jPanel3.add(text_NamaLingkungan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 231, 20));
+        jPanel3.add(text_PJLingkungan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 231, 20));
+
+        button_simpanEdit.setFont(new java.awt.Font("Ubuntu", 0, 11)); // NOI18N
+        button_simpanEdit.setText("Simpan");
+        jPanel3.add(button_simpanEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 20));
+
+        button_hapus.setFont(new java.awt.Font("Ubuntu", 0, 11)); // NOI18N
+        button_hapus.setText("Hapus");
+        jPanel3.add(button_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, 20));
+
+        jLabel4.setFont(new java.awt.Font("Ubuntu Light", 0, 11)); // NOI18N
+        jLabel4.setText("No. Telpon/HP");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, 10));
+        jPanel3.add(text_noHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 231, 20));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Daftar Lingkungan", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Ubuntu", 3, 11))); // NOI18N
+        jPanel2.setFont(new java.awt.Font("Ubuntu", 3, 11)); // NOI18N
+
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jScrollPane2.setFont(new java.awt.Font("Ubuntu", 0, 11)); // NOI18N
 
         tabel_Lingkungan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -155,44 +255,25 @@ public class MainFrame extends javax.swing.JFrame {
             tabel_Lingkungan.getColumnModel().getColumn(3).setHeaderValue("Nomer Telpon/HP");
         }
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("ID Lingkungan");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, -1, -1));
-
-        jLabel2.setText("Nama Lingkungan");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 29, -1, -1));
-
-        jLabel3.setText("Penanggung Jawab");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 55, -1, -1));
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 0, 99, -1));
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 26, 231, -1));
-        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 52, 231, -1));
-
-        button_simpanEdit.setText("Simpan");
-        jPanel3.add(button_simpanEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 104, -1, -1));
-
-        button_hapus.setText("Hapus");
-        jPanel3.add(button_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 104, -1, -1));
-
-        jLabel4.setText("No. Telpon/HP");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 81, -1, -1));
-        jPanel3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 78, 231, -1));
-
-        javax.swing.GroupLayout Daftar_lingkunganLayout = new javax.swing.GroupLayout(Daftar_lingkungan);
-        Daftar_lingkungan.setLayout(Daftar_lingkunganLayout);
-        Daftar_lingkunganLayout.setHorizontalGroup(
-            Daftar_lingkunganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        Daftar_lingkunganLayout.setVerticalGroup(
-            Daftar_lingkunganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Daftar_lingkunganLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, 170));
+
+        Daftar_lingkungan.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 519, 355));
 
         jTabbedPane1.addTab("Daftar Lingkungan", Daftar_lingkungan);
 
@@ -204,7 +285,7 @@ public class MainFrame extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 336, Short.MAX_VALUE)
+            .addGap(0, 392, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("tab4", jPanel4);
@@ -231,9 +312,9 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void PJ_wilayahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PJ_wilayahActionPerformed
+    private void text_PJ_wilayahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_PJ_wilayahActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PJ_wilayahActionPerformed
+    }//GEN-LAST:event_text_PJ_wilayahActionPerformed
 
 
     /**
@@ -286,9 +367,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel Daftar_lingkungan;
     private javax.swing.JPanel Daftar_wilayah;
     private javax.swing.JPanel Home;
-    private javax.swing.JTextField Lokasi_wilayah;
-    private javax.swing.JTextField Nama_wilayah;
-    private javax.swing.JTextField PJ_wilayah;
     private javax.swing.JButton button_hapus;
     private javax.swing.JButton button_simpanEdit;
     private javax.swing.JButton button_tambahEdit;
@@ -303,18 +381,22 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField kode_wilayah;
     private javax.swing.JTable tabel_Lingkungan;
     private javax.swing.JTable tabel_Wilayah;
+    private javax.swing.JTextField text_IDLingkungan;
+    private javax.swing.JTextField text_Lokasi_wilayah;
+    private javax.swing.JTextField text_NamaLingkungan;
+    private javax.swing.JTextField text_Nama_wilayah;
+    private javax.swing.JTextField text_PJLingkungan;
+    private javax.swing.JTextField text_PJ_wilayah;
+    private javax.swing.JTextField text_kode_wilayah;
+    private javax.swing.JTextField text_noHP;
     // End of variables declaration//GEN-END:variables
 }
